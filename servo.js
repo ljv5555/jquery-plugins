@@ -7,6 +7,8 @@ jQuery(function($){
   window.servodata.audoioElements=jQuery("<div class=\"audioElements pmfb\"></div>");
   $('body').append(window.servodata.audoioElements);
 
+  $('body').append($('<div style="border:2px solid green;"/>').append($('<input type="button value="init1()" onclick="window.init1();"/>')));
+  
 window.init1=function(){
 	var i=0;
 	var getAudioElement=function(ii){

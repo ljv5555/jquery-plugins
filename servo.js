@@ -18,7 +18,7 @@ window.init1=function(){
 		ind[0].innerHTML+="<br/>getAudioElement ii="+ii;
 		return rtn;
 	};
-	for(i=1;i<window.servodata.T25.length;i+=10)
+	for(i=0;i<window.servodata.T25.length;i+=1)
 	{
 
 		var ae = getAudioElement(i);

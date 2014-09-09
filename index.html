@@ -9,7 +9,7 @@
 .h20{height:20em}
 .hidden{display:none;}
 .ta1{width:95%;margin:.5em 2.5%;padding:.25em .25em;font-family:courier new;font-size:10.5px;height:250px;}
-audio{width:100px;display:block;}
+audio{width:300px;display:block;}
 
 </style>
 <script src="underscore.min.js"></script>
@@ -23,6 +23,10 @@ servo:
 
 <hr/>
 <div class="infodiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;"></div>
+<div class="buttondiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;">
+<button type="button" onclick="window.init1();"  name="b1">init1</button>
+<button type="button" onclick="jQuery('audio')[0].play();"  name="b2">play</button>
+</div>
 
 
 </body>

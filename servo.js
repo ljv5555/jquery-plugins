@@ -5,7 +5,6 @@ jQuery(function($){
   
   
   
-  $.fn.servo=function(p){console.log('p='+p+);console.log('this=');console.log(this);};
   
   
   

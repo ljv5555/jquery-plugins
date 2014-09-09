@@ -14,7 +14,7 @@ window.init1=function(){
 	var getAudioElement=function(ii){
 		var ind = jQuery('.infodiv');
 		ind.html('getAudioElement ii='+ii);
-		var rtn =  jQuery('<audio class="paudio percent_'+ii+'" src="'+window.servodata.T25[ii]+'"/>');
+		var rtn =  jQuery('<audio controls class="paudio percent_'+ii+'" src="'+window.servodata.T25[ii]+'"/>');
 		ind[0].innerHTML+="<br/>getAudioElement ii="+ii;
 		return rtn;
 	};

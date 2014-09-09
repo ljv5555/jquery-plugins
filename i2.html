@@ -34,7 +34,7 @@ servo:
   };
 </script>
 <div class="pos_w">
-<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="jQuery('.lpos_w').innerHTML(this.value);window.poschange();"/>
+<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="jQuery('.lpos_w').html(jQuery(this).val());window.poschange();"/>
 </div>
 <div class="lpos_w"></div>
 

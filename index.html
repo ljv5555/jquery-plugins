@@ -24,8 +24,13 @@ servo:
 <hr/>
 <div class="infodiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;"></div>
 <div class="buttondiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;">
-<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50"></input>
-<button type="button" onclick="window.playpause(this);"  name="b2">play</button>
+<script>
+  window.pos_lastval=[];
+  window.nonzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e && e.currentTime && e.currentTime!=0){rtn=i;}});
+  window.setzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e)e.currentTime=0;});
+  
+</script>
+<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="(function(e){nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);"></input>
 </div>
 <script>
   window.playpause=function(e){

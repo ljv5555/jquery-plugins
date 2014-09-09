@@ -27,9 +27,16 @@ servo:
   window.pos_lastval=[];
   window.nonzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e && e.currentTime && e.currentTime!=0){rtn=i;}});
   window.setzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e)e.currentTime=0;});
-  
+  window.poschange=function(){
+    (function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);
+    
+    
+  };
 </script>
-<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="(function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);"></input>
+<div class="pos_w">
+<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="jQuery('.lpos_w').innerHTML(this.value);window.poschange();"/>
+</div>
+<div class="lpos_w"></div>
 
 <script>
   window.playpause=function(e){

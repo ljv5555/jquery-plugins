@@ -30,7 +30,7 @@ servo:
   window.setzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e)e.currentTime=0;});
   
 </script>
-<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="(function(e){nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);"></input>
+<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="(function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);"></input>
 </div>
 <script>
   window.playpause=function(e){

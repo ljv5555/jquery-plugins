@@ -15,6 +15,17 @@ audio.haudio{max-height:0px;}
 <script src="jquery.min.js"></script>
 <script src="servodata.js"></script>
 <script src="servo.js"></script>
+<script>
+  window.pos_lastval=[];
+  window.nonzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e && e.currentTime && e.currentTime!=0){rtn=i;}});
+  window.setzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e)e.currentTime=0;});};
+  window.poschange=function(){
+//    (function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);
+    jQuery('.lpos_w').html(jQuery('.pos').val());
+    
+    
+  };
+</script>
 </head>
 <body>
 
@@ -23,18 +34,9 @@ servo:
 <hr/>
 <div class="infodiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;"></div>
 <div class="buttondiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;"></div>
-<script>
-  window.pos_lastval=[];
-  window.nonzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e && e.currentTime && e.currentTime!=0){rtn=i;}});
-  window.setzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e)e.currentTime=0;});};
-  window.poschange=function(){
-//    (function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);
-    
-    
-  };
-</script>
+
 <div class="pos_w">
-<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="jQuery('.lpos_w').html(jQuery('.pos').val());window.poschange();"/>
+<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="window.poschange();"/>
 </div>
 <div class="lpos_w"></div>
 

@@ -20,12 +20,17 @@ audio.haudio{max-height:0px;}
   window.pos.currentval=50;
   window.pos.lastval=[];
   window.pos.change=function(){
-    window.pos.lastval.push(jQuery('.lpos_w').html());
+    /*window.pos.lastval.push(jQuery('.lpos_w').html());
     jQuery('.lpos_w').html(jQuery('.pos').val());
     window.pos.currentvalue=Number(jQuery('.lpos_w').html());
     var audioelement=jQuery('audio:nth-of-type('+window.pos.currentvalue+')')
     .css('max-height','100px')
-    .siblings().css('max-height','0px');
+    .siblings().css('max-height','0px');*/
+    var h1 = '';
+    
+    var h1="<audio src=\""+window.servodata.T25[Number($("#pos").val())]+"\" class=\"audio1\"></audio>";
+    document.write(h1);
+    $('audio.audio1')[0].play();
   };
 </script>
 </head>
@@ -42,28 +47,7 @@ servo:
 </div>
 <div class="lpos_w"></div>
 
-<script>
-  window.poschange=function(e){
-    /*var posval=Number($('#pos').val());
-    var aa = $('audio');
-    var ca=aa[posval];
-    for(var i=0;i<aa.length;i++)
-    {
-      var aae = aa[i];
-      if(aae.currentTime!==0){try{aae.stop();}catch(exx1){}}else{}
-      if(i==posval){$(aae).removeClass('haudio');aae.play();}else{$(aae).addClass('haudio');}
-      
-      
-    }*/
-    
-    //$(aa[ca]).removeClass('haudio');
-    //$(aa[ca])[0].play();
-  };
-  setTimeout(function(){
-    window.init1();
-    
-  },500);
-</script>
+
 
 
 </body>

@@ -22,7 +22,7 @@ audio.haudio{max-height:0px;}
   window.poschange=function(){
 //    (function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);
     jQuery('.lpos_w').html(jQuery('.pos').val());
-    
+    window.poschange
     
   };
 </script>
@@ -36,27 +36,25 @@ servo:
 <div class="buttondiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;"></div>
 
 <div class="pos_w">
-<input id="pos" class="pos" type="range" min="1" max="101" step="1" value="50" onchange="window.poschange();"/>
+<input id="pos" class="pos" type="range" min="1" max="100" step="1" value="50" onchange="window.poschange();"/>
 </div>
 <div class="lpos_w"></div>
 
 <script>
-  window.playpause=function(e){
-    var ne=e.nextElementSibling; 
-    var pe = e.previousElementSibling;
+  window.poschange=function(e){
     var posval=$('#pos').val();
     var aa = $('audio');
-    aa.removeClass('haudio').removeClass('haudio').addClass('haudio');
-    var ca=aa[Number(posval)-1];
+    var ca=aa[Number(posval)];
     for(var i=0;i<aa.length;i++)
     {
       var aae = aa[i];
-      aae.stop();
-      $(aae).addClass('haudio');
+      if(aae.currentTime!==0){aae.stop();}else{}
+      if(i==posval){$(aae).removeClass('haudio');aae.play();}else{$(aae).addClass('haudio');}
+      
       
     }
-    $(aa[ca]).removeClass('haudio');
-    $(aa[ca])[0].play();
+    //$(aa[ca]).removeClass('haudio');
+    //$(aa[ca])[0].play();
   };
   setTimeout(function(){
     window.init1();

@@ -30,7 +30,7 @@ audio.haudio{max-height:0px;}
     .siblings().css('max-height','0px');*/
     var h1 = '';
     
-    var h1="<audio src=\""+window.servodata.T25[Number($("#pos").val())]+"\" class=\"audio1\"></audio>";
+    var h1="<audio controls=\"controls\" src=\""+window.servodata.T25[Number($("#pos").val())]+"\" class=\"audio1\"></audio>";
     $('.lastinbody').html(h1);
     setTimeout("jQuery('audio.audio1')[0].play();",1999);
   };

@@ -44,17 +44,18 @@ servo:
 
 <script>
   window.poschange=function(e){
-    var posval=$('#pos').val();
+    /*var posval=Number($('#pos').val());
     var aa = $('audio');
-    var ca=aa[Number(posval)];
+    var ca=aa[posval];
     for(var i=0;i<aa.length;i++)
     {
       var aae = aa[i];
-      if(aae.currentTime!==0){aae.stop();}else{}
+      if(aae.currentTime!==0){try{aae.stop();}catch(exx1){}}else{}
       if(i==posval){$(aae).removeClass('haudio');aae.play();}else{$(aae).addClass('haudio');}
       
       
-    }
+    }*/
+    
     //$(aa[ca]).removeClass('haudio');
     //$(aa[ca])[0].play();
   };

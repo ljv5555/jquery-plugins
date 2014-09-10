@@ -1,6 +1,8 @@
 <html>
 <head>
 <style>
+.lastinbody{padding:1em;margin:1em;font:9px arial,helvetica;border-radius:1em;color:#89a;background:#fed;}
+
 .br1{border-radius:1em !important;}
 .pmfb{padding:1em;margin:1em;font:9px arial,helvetica;border-radius:1em;color:#888;background:#ddd;}
 .blu{color:#ccf;background:#55c;}
@@ -29,8 +31,8 @@ audio.haudio{max-height:0px;}
     var h1 = '';
     
     var h1="<audio src=\""+window.servodata.T25[Number($("#pos").val())]+"\" class=\"audio1\"></audio>";
-    document.write(h1);
-    $('audio.audio1')[0].play();
+    $('.lastinbody').html(h1);
+    setTimeout("jQuery('audio.audio1')[0].play();",1999);
   };
 </script>
 </head>

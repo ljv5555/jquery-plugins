@@ -16,14 +16,13 @@ audio.haudio{max-height:0px;}
 <script src="servodata.js"></script>
 <script src="servo.js"></script>
 <script>
-  window.pos_lastval=[];
-  window.nonzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e && e.currentTime && e.currentTime!=0){rtn=i;}});
-  window.setzeropos=function(){var rtn = -1;jQuery('audio').each(function(i,e){if(e)e.currentTime=0;});};
-  window.poschange=function(){
-//    (function(e){window.nonzeropos();setzeropos();jQuery('.haudio').addClass('haudio2');jQuery('audio').toggleClass('haudio2');jQuery('.haudio2')[0].play();})(this);
+  window.pos={};
+  window.pos.currentval=50;
+  window.pos.lastval=[];
+  window.pos.change=function(){
+    window.pos.lastval.push(jQuery('.lpos_w').html());
     jQuery('.lpos_w').html(jQuery('.pos').val());
-    window.poschange
-    
+    window.pos.currentvalue=Number(jQuery('.lpos_w').html());
   };
 </script>
 </head>
@@ -36,7 +35,7 @@ servo:
 <div class="buttondiv pmfb" style="border:1px solid red;min-height:10px;max-height:250px;"></div>
 
 <div class="pos_w">
-<input id="pos" class="pos" type="range" min="1" max="100" step="1" value="50" onchange="window.poschange();"/>
+<input id="pos" class="pos" type="range" min="1" max="100" step="1" value="50" onchange="window.pos.change();"/>
 </div>
 <div class="lpos_w"></div>
 

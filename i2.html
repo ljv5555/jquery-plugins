@@ -23,6 +23,9 @@ audio.haudio{max-height:0px;}
     window.pos.lastval.push(jQuery('.lpos_w').html());
     jQuery('.lpos_w').html(jQuery('.pos').val());
     window.pos.currentvalue=Number(jQuery('.lpos_w').html());
+    var audioelement=jQuery('audio:nth-of-type('+window.pos.currentvalue+')')
+    .css('max-height','100px')
+    .siblings().css('max-height','0px');
   };
 </script>
 </head>
